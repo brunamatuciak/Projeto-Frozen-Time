@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+main {
+    font-family: 'Inter', sans-serif;
+    padding-left: 5%;
+    margin-left: 20%;
+    width: 75%;
+    height: 320px;
+}
+
+main h1 {
+    font-size: 50px;
+    font-weight: 400;
+    margin-top: 5%;
+    padding-bottom: 4%;
+}
+
+.titulo {
+    display: flex;
+    width: 96%;
+}
+
+.adicionar {
+    margin-top: 7%;
+    margin-left: 51%;
+}
+
+.adicionar button {
+    width: 190px;
+    height: 35px;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: #288396;
+    color: #fff;
+
+}
+.verLotes{
+    cursor: pointer;
+}
+.accordion {
+    background-color: #ffff;
+    color: #000;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    height: 20%;
+    text-align: left;
+    border: #000 1px solid;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.4s;
+    margin-top: 3%;
+}
+
+.text {
+    display: flex;
+    flex-direction: row;
+    margin-left: 3%;
+    font-size: 25px;
+}
+
+.text p {
+    margin-top: 0;
+    gap: 0;
+}
+
+.numero {
+    width: 2.1%;
+    height: 3.5%;
+    margin-top: 0;
+    margin-left: 24%;
+    padding-left: 0.7%;
+    margin-bottom: 0;
+    position: absolute;
+    height: 30px;
+    border-radius: 5px;
+}
+
+.alertas {
+    margin-left: 28%;
+    position: absolute;
+}
+.adicionar a{
+    color: white;
+}
+.text li {
+    color: #09640D;
+    list-style-type: disc;
+    margin-left: 45%;
+    position: absolute;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #000;
+    color: #000;
+    cursor: pointer;
+    width: 90%;
+    height: 115px;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.4s;
+}
+
+.info li {
+    font-size: 20px;
+    margin-left: 5%;
+    padding-top: 2%;
+
+}
+
+.info button {
+    background-color: #288396;
+    /* border: #000 1px solid; */
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 700;
+    /* height: 90%; */
+    margin-left: 2%;
+    width: 8%;
+    padding: 0.5%;
+}
+
+.alteracao {
+    display: flex;
+    justify-content: end;
+    margin-right: 2%;
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+
+
+.accordion:after {
+    content: '\2304';
+    font-size: 40px;
+    color: #000;
+    float: right;
+    position: relative;
+    top: -80px;
+}
+
+.seta:after {
+    content: "\2303";
+    top: -53px;
+}

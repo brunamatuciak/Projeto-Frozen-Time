@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+/*Classes do Menu*/
+.header {
+    background-color: #72aab5;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+  }
+  
+  .txtHeader {
+    font-size: 18px;
+}
+/*Classes de Alinhamento*/
+.flexCenter{
+    display:flex;
+    justify-content: center;  
+}
+.flexCenterAlignSelfCenter{
+    display: flex;
+    align-self: center; 
+    justify-content: center;
+}
+.flexCenterAlignItemsCenter{
+    display:flex; 
+    align-items: center;
+    justify-content: center;
+}
+.flexStartAlignSelfCenter{
+    display: flex; 
+    align-self: center;
+    justify-content: start;
+}
+.flexSpaceAround{
+    display:flex;
+    justify-content: space-around;
+}
+.widthiconHeader{
+    width: 20%;
+    margin-right: 6%;
+}
+
+
+.divConteudo{
+    width: 80%; 
+    margin-left: 20%;
+}
+hr{
+    width: 90%; 
+    border: 1px solid rgb(255,255,255, 0.6) ;
+}
+#espacamentoTopo{
+    margin-top: 2%;
+}
+
+
+/* fim do css padrão */
+
+body {
+    font-family: 'Inter';
+    margin: 0;
+    display: flex;
+}
+
+.titulo {
+    display:flex; 
+    margin-left: 8%; 
+    margin-top: 2%;
+}
+
+.corpo {
+    width: 80%; 
+    margin-left: 20%;
+    display: flex;
+}
+
+.campos {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.dados {
+    display: flex; 
+    justify-content: start;
+    margin-left: 8%;
+}
+
+.titulo h1 {
+    font-size: 40px;
+}
+
+
+.dados hr {
+    width: 90%;
+    margin: 0;
+    
+    background-color: black;
+}
+
+.contexto {
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+
+.outros {
+    display: flex;
+    flex-direction: column;
+    width: 100% ;
+}
+
+.outros h3 {
+    text-decoration: underline;
+    color: black;
+}
+
+.outros .contexto {
+    margin-top:10%;
+    padding: 2% 0;
+}
+
+.atributo {
+    font-size: 21px;
+    color: black;
+}
+
+input {
+    color: rgb(82, 82, 82);
+    border: 0;
+}
+
+.container2 {
+    flex-direction: column;
+    border: #288396 solid 2px;
+    border-radius: 5px;
+    width: 60%;
+    margin-bottom: 7%;
+    padding-bottom: 4%;
+
+}
+
+.contexto span {
+    margin-bottom: 9%;
+}
+
+.botao {
+   
+    display: flex;
+    font-weight: 400 !important;
+    margin-bottom: 7%;
+
+}
+
+.botao a {
+    color: white;
+    font-weight: 400;
+}
+
+button {
+    border: black solid 2px;
+    border-radius: 5px;
+    width: 240px;
+    height: 45px;
+    background-color: #288396;
+    color: white;
+    font-size: 21px;   
+    cursor: pointer;
+    font-weight: 400 !important;
+}
+
+.contBotao {
+    display: flex;
+    justify-content: end;
+    width: 82%;
+}
+
+.alteracao {
+    margin-top: 1%;
+    font-size: 13px;
+}
+
+h3, h4{
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+}
+p{
+    font-weight: bold;
+}
+.txtHeader{
+    font-size: 18px;
+}
+
+.btnCadFunci{
+    height: 60px;
+    background-color: #288396;
+    color: white;
+    font-size: 21px;   
+    cursor: pointer;
+    margin-top: 7%;
+    font-weight: 400;
+    text-decoration: none;
+    
+}
+

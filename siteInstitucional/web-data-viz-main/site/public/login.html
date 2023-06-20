@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frozen Time</title>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="img/logoAba.png">
+
+</head>
+
+<body>
+
+    <header style="background-color: #76c3cf;">
+        <nav class="cabecalho">
+            <a href="index.html" style="width: 45%;"><img src="img/logo.png" id="logo" /></a>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html#beneficios">Solução</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li><a href="calculadora.html">Simulação</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li><a href="assinatura.html">Assine</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li><a href="index.html#sobreNos">Sobre</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li><a href="contato.html">Contato</a></li>
+                    <li><img src="img/linha.png" /></li>
+
+                    <li>
+                        <a href="login.html"><img src="img/login.png" /></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="login">
+
+        <div class="container">
+
+            <div class="cardLogin">
+
+                <img src="img/logoFrozenTime.png" alt="Logo da empresa" class="imagemLogo">
+
+            </div>
+
+            <div class="form">
+
+                <div class="campos">
+                    <div class="inputs">
+                        <input type="email" class="input" placeholder="Email" name="email" id='email' required />
+                        <label for="email" class="input_label">Email</label>
+                    </div>
+
+                    <div class="inputs">
+                        <input type="password" class="input" placeholder="Senha" name="senha" id='senha' required />
+                        <label for="senha" class="input_label">Senha</label>
+                    </div>
+
+                    <div class="botoesTexto">
+
+                        <div class="divBotoes">
+                            <div class="botoesLoginCadastro">
+                                <button onclick="Login()" class="botaoLogin">Login</button>
+                                <a class="cadastrar" href="CadastroEmpresa.html">Cadastrar</a>
+                            </div>
+                        </div>
+
+                        <div class="textoRecuperar">
+                            <a href="./Recuperar_senha.html">Esqueci minha senha</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        </div>
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="footerConteudo">
+
+            <div>
+                <ul class="logoFooter">
+                    <li class="imgLogoFooter">
+                        <a href="index.html"><img src="./icon/iconPreto.png"></a>
+                    </li>
+                    <li class="txtLogoFooter">&copy;2023 FrozenTime, Inc.<br> Todos o direitos reservados</li>
+                </ul>
+
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div>
+                <ul class="paginasFooter">
+                    <li>
+                        <h2>Navegue</h2>
+                    </li>
+                    <li><a href="index.html#beneficios">Solução</a></li>
+                    <li><a href="calculadora.html">Simulação</a></li>
+                    <li><a href="index.html#sobreNos">Sobre</a></li>
+                </ul>
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div>
+                <ul class="paginasFooter">
+                    <li>
+                        <h2>Contatos</h2>
+                    </li>
+                    <li><a href="https://api.whatsapp.com/send?phone=5511953698849">Whatsapp</a></li>
+                    <li onclick="copiarTelefone()">Telefone</li>
+                    <li onclick="copiarEmail()">E-mail</li>
+                </ul>
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div>
+                <ul class="paginasFooterInsti">
+                    <li>
+                        <h2>Institucional</h2>
+                    </li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
+<script>
+    var idFkLoginGlobal;
+    var idEmpresaGlobal;
+    function Login() {
+        var emailVar = email.value;
+        var senhaVar = senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            return false;
+        }
+
+        fetch("/loginTabela/autenticarLoginTabela", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailLogin: emailVar,
+                senhaLogin: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    idFkLoginGlobal = json.idLogin;
+                    console.log('idFkLoginGlobal'+idFkLoginGlobal);
+
+                    setTimeout(function () {
+                        console.log('Usuario Logado com sucesso!')
+                        window.location = "./Dashboard/index.html";
+                    }, 1000); // apenas para exibir o loading
+                    
+                    selectIdEmpresa(idFkLoginGlobal);
+                });
+                
+            } else {
+                
+                console.log("Houve um erro ao tentar realizar o login!");
+                
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+            
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+       
+
+        return false;
+    }
+
+
+    function copiarTelefone() {
+        navigator.clipboard.writeText("11 95369-8849")
+            .then(() => {
+                alert("Telefone para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+    function copiarEmail() {
+        navigator.clipboard.writeText("desk@frozentime.atlassian.net")
+            .then(() => {
+                alert("Email para contato copiado!");
+            })
+            .catch(() => {
+                alert("something went wrong");
+            });
+    }
+
+    function selectIdEmpresa(idLogin){
+        var idEmpresa;
+        fetch(`/empresa/listarIdEmpresa/${idLogin}`).then(function (response){
+            if(response.ok){
+                response.json().then(function (resposta){
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    var idEmpresaArray = resposta[0];
+                    idEmpresa = idEmpresaArray.idEmpresa;
+                    console.log(`ID Empresa Global: ${idEmpresa}`);
+                    selectNomeEmpresa((idEmpresa + 1));
+                });
+            }else{
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ idEmpresa: ${error.message}`);
+      });
+    }
+
+    function selectNomeEmpresa(idUsuarioVar){
+        var nomeEmpresa;
+        fetch(`/empresa/listarNomeEmpresa/${idUsuarioVar}`).then(function (response){
+            if(response.ok){
+                response.json().then(function (resposta){
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    var nomeEmpresaArray = resposta[0];
+                    console.log('Nome Empresa: ' + nomeEmpresaArray);
+                    nomeEmpresa = nomeEmpresaArray.nomeEmpresa;
+                    sessionStorage.NOMEEMPRESA = nomeEmpresa;
+                    
+            });
+            }else{
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+        .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ nomeEmpresa: ${error.message}`);
+      });
+    }
+
+
+    function selectfkEmpresa() {
+    var fkEmpresa;
+    fetch('/empresa/listarUltimoIdEmpresa').then(function (response) {
+      if (response.ok) {
+        response.json().then(function (resposta) {
+          console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+          var fkEmpresaArray = resposta[0];
+          fkEmpresa = fkEmpresaArray.idEmpresa;
+          fkEmpresaGlobal = fkEmpresa;
+          console.log(fkEmpresaGlobal);
+        });
+      } else {
+        console.error('Nenhum dado encontrado ou erro na API');
+      }
+    })
+      .catch(function (error) {
+        console.error(`Erro na obtenção dos dados p/ ultimo idEmpresa: ${error.message}`);
+      });
+    return fkEmpresa;
+  }
+
+</script>

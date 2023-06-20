@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+
+
+* {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/telaDeFundoVacina.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+#divTudo {
+    width: 100%;
+    margin: auto;
+
+}
+
+#divBeneficios {
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#divBeneficios h1 {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#idTitulo{
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+#divQuemSomos {
+    color: black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 30px;
+    margin: 10%;
+    width: 100%;
+}
+
+#divQuemSomos h1 {
+    font-size: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+#divQuemSomos p {
+    border: 3px rgba(255, 255, 255, 0.658) solid;
+    font-size: 18px;
+    width: auto;
+    padding: 25px;
+    margin-left: -150px;
+}
+#divParagrafo{
+    margin-left: -25px;
+}
+
+#divFotos {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+}
+
+#divFotos img {
+    width: 200px;
+    height: 200px;
+}
+
+#divFotos #fotoGrande {
+    width: 250px;
+    height: 250px;
+}
+
+#divContent {
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 310px;
+    background-color: #d9d9d9c9;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.card h1 {
+    font-size: 15px;
+}
+
+.card img {
+    margin-left: 65px;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
+
+.pic-ctn {
+    width: 100vw;
+    height: 200px;
+}
+
+@keyframes display {
+    0% {
+        transform: translateX(200px);
+        opacity: 0;
+    }
+
+    10% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    30% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+}
+
+.pic-ctn {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    margin-top: 15vh;
+}
+
+.pic-ctn>img {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 100px);
+    opacity: 0;
+    animation: display 10s infinite;
+    border-radius: 100px;
+    background-color: #d9d9d970;
+}
+
+img:nth-child(2) {
+    animation-delay: 2s;
+}
+
+img:nth-child(3) {
+    animation-delay: 4s;
+}
+
+img:nth-child(4) {
+    animation-delay: 6s;
+}
+
+img:nth-child(5) {
+    animation-delay: 8s;
+}
+
+img:nth-child(6) {
+    animation-delay: 10s;
+}
+
+img:nth-child(7) {
+    animation-delay: 12s;
+}
+
+/*----- FOOTER ------*/
+.footer {
+    background-color: #8BC3DE;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2%;
+}
+
+hr {
+    width: 120px;
+    border: 0.2px solid black;
+    transform: rotate(90deg);
+    margin-top: 50%;
+}
+
+ul {
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+li {
+    align-self: flex-start;
+    display: flex;
+    font-size: 14px;
+    margin-top: 6%;
+}
+
+li:hover {
+    cursor: pointer;
+    color: #1B1E2B;
+}

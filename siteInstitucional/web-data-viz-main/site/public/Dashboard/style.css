@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+
+body {
+    margin: 0;
+    display: flex;
+}
+
+a,
+h3,
+h4,
+h2,
+p,
+span {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+p {
+    font-weight: bold;
+}
+
+hr {
+    width: 90%;
+    border: 1px solid rgb(255, 255, 255, 0.6);
+}
+
+#espacamentoTopo {
+    margin-top: 2%;
+}
+
+/*Classes do Menu*/
+.header {
+    background-color: #72aab5;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+}
+
+.txtHeader {
+    font-size: 18px;
+}
+
+/*Classes de Alinhamento*/
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.flexCenterAlignSelfCenter {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.flexCenterAlignItemsCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexStartAlignSelfCenter {
+    display: flex;
+    align-self: center;
+    justify-content: start;
+}
+
+.flexSpaceAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+.widthiconHeader {
+    width: 20%;
+    margin-right: 6%;
+}
+
+.divConteudo {
+    width: 80%;
+    margin-left: 20%;
+}
+
+/*Card KPIS*/
+.espacamentoCards {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5%;
+}
+
+.cards {
+    width: 24%;
+    height: 214px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*Card PRODUTOS*/
+.divCardsProduto {
+    justify-content: center;
+    display: flex;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.divConteudoCardsProduto {
+    width: 80%;
+    height: 379px;
+    background-color: #4E7A83;
+    border-radius: 10px;
+}
+
+.backgroudInfoProdutos {
+    width: 80%;
+    background-color: #F5F1E6;
+    margin-left: 1%;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.hrProdutos {
+    width: 90%;
+    border: 1px solid black;
+}
+
+.backgroundTempMaxMin {
+    margin-bottom: 10px;
+    background: rgba(109, 172, 181, 0.71);
+    width: 100%;
+    border-radius: 20px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+}
+
+.btnPassarProduto {
+    align-self: center;
+    cursor: pointer;
+}
+
+.metricas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5%;
+    background-color: #4E7A83;
+}
+
+.metricas img {
+    margin-top: 5%;
+    margin-right: 5%;
+    width: 80%;
+
+}
+
+.cardMetricas {
+    background-color: #4E7A83;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 10px;
+    margin-bottom: 10%;
+    padding-top: 1%;
+}
+.cardMetricas p{
+    font-size: 18px;
+}
+
+.cardMetricas button {
+    width: 150px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #288396;
+    color: #fff;
+    margin-left: 35%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+/* Alertas */
+  #alerta {
+    position: absolute;
+    right: 0px;
+  }
+  
+  .mensagem-alarme {
+    background-color: rgb(255, 0, 0);
+    border: 2px black solid;
+    border-radius: 5px;
+    width: 300px;
+    height: 80px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    padding-top: 0;
+  }
+  
+  .mensagem-alarme h3 {
+    font-size: 14px;
+    margin: 0;
+    color: white;
+  }
+  
+  .mensagem-alarme .informacao {
+    margin: 0;
+    color: white;
+  }
+  
+  .alarme-sino {
+    width: 35px;
+    height: 35px;
+    animation-name: treme;
+    animation-duration: 1s;
+    background-image: url('atencao.png');
+    color: rgb(255, 255, 255);
+    background-size: cover;
+    animation-iteration-count: infinite;
+    margin-top: 2%;
+    margin-right: 2%;
+  }
+  
+  .alarme-sino:focus {
+    animation: treme 0.01s;
+    animation-iteration-count: 3;
+  }
+  
+  @keyframes treme {
+    0% {margin-left: 0;}
+    25% {margin-left: 2px;}
+    50% {margin-left: 0;}
+    75% {margin-left: -2px;}
+    100% {margin-left: 0;}
+  }
